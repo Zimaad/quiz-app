@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning UI Quiz Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="background-shapes">
+        <div class="shape1"></div>
+        <div class="shape2"></div>
+        <div class="shape3"></div>
+    </div>
+
+    <div id="quiz-container">
+        <!-- Quiz Header -->
+        <div id="header">
+            <h1>Dynamic Trivia</h1>
+            <p id="header-subtitle">Choose Your Challenge</p>
+        </div>
+
+        <!-- Quiz Content Area -->
+        <div id="quiz-content">
+            <!-- Start Screen / Category Selection -->
+            <div id="start-container">
+                <p class="start-text">Select a category to begin. You'll have 20 seconds per question. Good luck!</p>
+                <div id="category-selection">
+                    <button class="category-btn" data-category="18">💻 Science: Computers</button>
+                    <button class="category-btn" data-category="11">🎬 Entertainment: Film</button>
+                    <button class="category-btn" data-category="21">⚽ Sports</button>
+                    <button class="category-btn" data-category="9">🌍 General Knowledge</button>
+                </div>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="loading-container" class="hidden">
+                <div class="loader"></div>
+                <p>Summoning Questions...</p>
+            </div>
+
+            <!-- Question Display -->
+            <div id="question-container" class="hidden">
+                <div id="question-header">
+                    <div id="question-counter"></div>
+                    <div id="timer"></div>
+                </div>
+                <div id="timer-container">
+                    <div id="timer-bar"></div>
+                </div>
+                <h2 id="question-text"></h2>
+                <div id="options-container"></div>
+                <div id="feedback"></div>
+            </div>
+
+            <!-- Score Display -->
+            <div id="score-container" class="hidden">
+                <h2>Quiz Complete!</h2>
+                <p>Your final score is:</p>
+                <p id="final-score"></p>
+                <div id="score-buttons">
+                    <button id="restart-same-category-btn" class="btn btn-secondary">Restart Quiz</button>
+                    <button id="play-another-category-btn" class="btn">Play Another Category</button>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-container" class="hidden">
+                <p>Oops! Could not fetch questions. The trivia spirits are busy. Please try again later.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
