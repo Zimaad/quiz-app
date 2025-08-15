@@ -134,6 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
         elements.feedback.textContent = `Time's up! The correct answer was: ${quizData[currentQuestionIndex].answer}`;
         elements.feedback.className = 'feedback-timeout';
         disableOptions(true);
+        
+        // Scroll to feedback element to show the result
+        elements.feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
         setTimeout(loadNextQuestion, 2500);
     }
 
@@ -160,6 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
             elements.feedback.className = 'feedback-incorrect';
             selectedButton.classList.add('incorrect');
         }
+
+        // Scroll to feedback element to show the result
+        elements.feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
         setTimeout(loadNextQuestion, 2500);
     }
